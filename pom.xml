@@ -1,0 +1,65 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>creative.fire.jsfrf.tinylibrary</groupId>
+	<artifactId>tinylibrary</artifactId>
+	<packaging>war</packaging>
+	<version>1.0-SNAPSHOT</version>
+	<name>tinylibrary Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+
+<properties>
+	<jsf.version>2.1</jsf.version>
+	<sun.faces.version>2.1.2</sun.faces.version>
+</properties>
+<repositories>
+    <repository>
+        <id>maven2-repository.dev.java.net</id>
+        <name>Java.net Repository for Maven</name>
+        <url>http://download.java.net/maven/2</url>
+    </repository>
+</repositories>
+
+<dependencies>
+    <!-- Option 1: Use if deploying to a Java EE application server (GlassFish, JBoss AS, etc) -->
+    <dependency>
+        <groupId>javax.faces</groupId>
+        <artifactId>jsf-api</artifactId>
+        <version>${jsf.version}</version>
+        <scope>provided</scope>
+    </dependency>
+
+    <!-- Option 2: Use if deploying to a servlet container (Tomcat, Jetty, etc) -->
+<!--
+    <dependency>
+        <groupId>com.sun.faces</groupId>
+        <artifactId>jsf-api</artifactId>
+        <version>${sun.faces.version}</version>
+        <scope>runtime</scope>
+    </dependency>
+    <dependency>
+        <groupId>com.sun.faces</groupId>
+        <artifactId>jsf-impl</artifactId>
+        <version>${sun.faces.version}</version>
+        <scope>runtime</scope>
+    </dependency> 
+-->
+</dependencies>
+
+<build>
+	<finalName>tinylibrary</finalName>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>2.0.2</version>
+            <configuration>
+                 <source>1.5</source>
+                 <target>1.5</target>
+                 <encoding>UTF-8</encoding>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+
+</project>
