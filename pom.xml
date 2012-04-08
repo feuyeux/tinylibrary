@@ -9,8 +9,7 @@
 	<url>http://maven.apache.org</url>
 
 	<properties>
-		<jsf.version>2.1</jsf.version>
-		<sun.faces.version>2.1.2</sun.faces.version>
+		<jsf.version>2.1.7</jsf.version>
 		<rf.version>4.2.0.Final</rf.version>
 	</properties>
 	<repositories>
@@ -23,10 +22,9 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>javax.faces</groupId>
-			<artifactId>jsf-api</artifactId>
+            <groupId>org.glassfish</groupId>
+            <artifactId>javax.faces</artifactId>
 			<version>${jsf.version}</version>
-			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.richfaces.ui</groupId>
