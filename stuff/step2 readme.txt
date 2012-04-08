@@ -1,0 +1,2 @@
+tinylibrary
+mvn archetype:create -DgroupId=creative.fire.jsfrf.tinylibrary -DartifactId=tinylibrary -DarchetypeGroupId=org.richfaces.archetypes -DarchetypeArtifactId=richfaces-archetype-simpleapp -DarchetypeVersion=4.2.0.Final

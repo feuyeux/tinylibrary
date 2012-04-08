@@ -54,8 +54,8 @@ Add the JSF dependencies to your Maven POM file, /pom.xml, according to which JS
             <artifactId>maven-compiler-plugin</artifactId>
             <version>2.0.2</version>
             <configuration>
-                 <source>1.5</source>
-                 <target>1.5</target>
+                 <source>1.6</source>
+                 <target>1.6</target>
                  <encoding>UTF-8</encoding>
             </configuration>
         </plugin>
