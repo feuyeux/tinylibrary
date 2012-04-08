@@ -67,11 +67,7 @@ mvn eclipse:eclipse -Dwtpversion=2.0
 For NetBeans/IntelliJ Users: You should be able to import the project root folder directly, as a Maven project.
 
 4.
- /src/main/webapp/WEB-INF/web.xml:
-   
-<!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
+/src/main/webapp/WEB-INF/web.xml:
 
 <web-app>
     <display-name>Archetype Created Web Application</display-name>
@@ -89,9 +85,4 @@ For NetBeans/IntelliJ Users: You should be able to import the project root folde
         <servlet-name>Faces Servlet</servlet-name>
         <url-pattern>*.jsf</url-pattern>
     </servlet-mapping>
-
 </web-app>
-
-
-
-
