@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:rich="http://richfaces.org/rich" xmlns:a4j="http://richfaces.org/a4j">
+<h:head>
+	<h:outputStylesheet name="jsfrf.css" library="css" />
+	<title>tinylibrary1.0</title>
+</h:head>
+<h:body>
+	<rich:panel header="#{bookBean.b.name}">
+		<h:panelGrid columns="2">
+			<h:outputText value="图书编号: " />
+			<h:outputText value="#{bookBean.b.id}" />
+			<h:outputText value="图书作者: " />
+			<h:outputText value="#{book.author}" />
+			<h:outputText value="图书地址: " />
+			<h:outputText value="#{bookBean.b.url}" />
+			<h:outputText value="图书简述: " />
+			<h:outputText value="#{book.desc} " />
+		</h:panelGrid>
+		<h:graphicImage id="logo2" url="/resources/img/#{book.image}" height="180" width="140" />
+	</rich:panel>
+	</rich:dataGrid>
+</h:body>
+</html>
