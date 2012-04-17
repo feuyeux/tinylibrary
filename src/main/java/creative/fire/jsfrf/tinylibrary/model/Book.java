@@ -6,15 +6,17 @@ public class Book implements Serializable {
 	private static final long serialVersionUID = 1874850709098419575L;
 	private String id;
 	private String name;
+	private String alias;
 	private String image;
 	private String url;
 	private String desc;
 	private String author;
 
-	public Book(String id, String name, String image, String url, String desc, String author) {
+	public Book(String id, String name, String alias, String image, String url, String desc, String author) {
 		super();
 		this.id = id;
 		this.name = name;
+		this.alias = alias;
 		this.image = image;
 		this.url = url;
 		this.desc = desc;
@@ -74,20 +76,27 @@ public class Book implements Serializable {
 		return id + "-" + name;
 	}
 
+	public String getAlias() {
+		return alias;
+	}
+
+	public void setAlias(String alias) {
+		this.alias = alias;
+	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (obj == this)
 			return true;
 		if (obj == null)
 			return false;
-		if (obj instanceof Book) {
-			return ((Book) obj).id.equals(id);
-		}
-		return false;
+		if (obj.getClass() != getClass())
+			return false;
+		return ((Book) obj).id.equals(id);
 	}
 
 	@Override
 	public int hashCode() {
-		return id.hashCode();
+		return id.hashCode() * 31;
 	}
 }

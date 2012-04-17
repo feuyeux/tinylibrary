@@ -2,7 +2,9 @@ package creative.fire.jsfrf.tinylibrary.bean;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.faces.context.FacesContext;
 
+import creative.fire.jsfrf.tinylibrary.TinyBooks;
 import creative.fire.jsfrf.tinylibrary.model.Book;
 
 @ManagedBean(name = "bookBean")
@@ -18,8 +20,10 @@ public class BookDetailBean {
 
 	}
 
-	public void edit() {
-
+	public String edit() {
+		String bookId = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get("bookId");
+		b = TinyBooks.getBook(bookId);
+		return "book";
 	}
 
 	public void remove() {
