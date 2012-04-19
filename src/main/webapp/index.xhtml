@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
@@ -29,4 +30,37 @@
 		</rich:dataGrid>
 	</h:form>
 </h:body>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:rich="http://richfaces.org/rich" xmlns:a4j="http://richfaces.org/a4j">
+<h:head>
+	<h:outputStylesheet>
+	.vtop {
+	vertical-align: top;
+	width: 150px;
+	}
+	</h:outputStylesheet>
+	<title>tinylibrary1.0</title>
+</h:head>
+<h:body>
+	<h:form>
+		<h:outputText value="欢迎 #{reception.name}" />
+		<rich:dataGrid value="#{listBean.books}" var="book" columns="3" style="width:75%">
+			<rich:panel header="#{book.alias}">
+				<h:panelGrid columns="2">
+					<h:commandLink action="#{bookBean.edit}" value="#{book.desc}">
+						<f:param name="bookId" value="#{book.id}" />
+					</h:commandLink>
+					<h:outputText value="#{book.author}" />
+				</h:panelGrid>
+				<h:outputLink value="#{book.url}">
+					<h:graphicImage url="/resources/img/#{book.image}" height="90" width="70" />
+				</h:outputLink>
+			</rich:panel>
+		</rich:dataGrid>
+	</h:form>
+</h:body>
+>>>>>>> 0425f762e39d86350958da17ece9eff51634a21e
 </html>
