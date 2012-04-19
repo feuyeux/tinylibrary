@@ -14,7 +14,7 @@
 <h:body>
 	<h:form>
 		<h:outputText value="欢迎 #{reception.name}" />
-		<rich:dataGrid value="#{listBean.books}" var="book" columns="3" style="width:75%">
+		<rich:dataGrid value="#{listBean.books}" var="book" columns="3" columnClasses="vtop vtop vtop">
 			<rich:panel header="#{book.alias}">
 				<h:panelGrid columns="2">
 					<h:commandLink action="#{bookBean.edit}" value="#{book.desc}">
