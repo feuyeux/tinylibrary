@@ -1,7 +1,10 @@
 package creative.fire.jsfrf.tinylibrary.model;
 
 import java.io.Serializable;
-
+/**
+ * @author feuyeux@gmail.com
+ * @version 1.0
+ */
 public class Book implements Serializable {
 	private static final long serialVersionUID = 1874850709098419575L;
 	private String id;

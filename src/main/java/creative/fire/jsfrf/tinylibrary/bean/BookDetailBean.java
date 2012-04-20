@@ -6,7 +6,10 @@ import javax.faces.context.FacesContext;
 
 import creative.fire.jsfrf.tinylibrary.TinyBooks;
 import creative.fire.jsfrf.tinylibrary.model.Book;
-
+/**
+ * @author feuyeux@gmail.com
+ * @version 1.0
+ */
 @ManagedBean(name = "bookBean")
 @RequestScoped
 public class BookDetailBean {

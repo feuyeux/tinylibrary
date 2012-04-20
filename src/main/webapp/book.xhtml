@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:rich="http://richfaces.org/rich" xmlns:a4j="http://richfaces.org/a4j" xmlns:ui="http://java.sun.com/jsf/facelets">
+	xmlns:rich="http://richfaces.org/rich" xmlns:a4j="http://richfaces.org/a4j" xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/template/tinyTemplate.xhtml">
 	<ui:define name="tinyHeader">
-		<ui:include src="tinyHead.xhtml" />
+		<ui:include src="template/tinyHead.xhtml" />
 	</ui:define>
 
 	<ui:define name="tinyBody">
@@ -23,6 +24,6 @@
 	</ui:define>
 
 	<ui:define name="tinyFooter">
-		<ui:include src="tinyFoot.xhtml" />
+		<ui:include src="template/tinyFoot.xhtml" />
 	</ui:define>
 </ui:composition>

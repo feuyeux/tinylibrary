@@ -1,42 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core" xmlns:rich="http://richfaces.org/rich" xmlns:a4j="http://richfaces.org/a4j"
-	xmlns:ui="http://java.sun.com/jsf/facelets">
+	xmlns:ui="http://java.sun.com/jsf/facelets" template="template/tinyTemplate.xhtml">
 	<ui:define name="tinyHeader">
-		<ui:include src="tinyHead.xhtml" />
+		<ui:include src="template/tinyHead.xhtml" />
 	</ui:define>
 
 	<ui:define name="tinyBody">
-		<h:outputStylesheet>
-	.vtop {
-	vertical-align: top;
-	width: 150px;
-	}
-	</h:outputStylesheet>
 		<h:form>
 			<h:outputText value="欢迎 #{reception.name}" />
-			<rich:datatable value="#{listBean.books}" var="book">
-				<rich:column>
-					<h:commandLink action="#{bookBean.edit}" value="#{book.alias}">
-						<f:param name="bookId" value="#{book.id}" />
-					</h:commandLink>
-				</rich:column>
-				<rich:column>
-					<h:outputText value="#{book.desc}" />
-				</rich:column>
-				<rich:column>
-					<h:outputText value="#{book.author}" />
-				</rich:column>
-				<rich:column>
-					<h:outputLink value="#{book.url}">
-						<h:graphicImage url="/resources/img/#{book.image}" height="45" width="35" />
-					</h:outputLink>
-				</rich:column>
+			<h:panelGrid columns="2" columnClasses="vtop,vtop">
+				<a4j:repeat value="#{listBean.books}" var="book">
+					<rich:panel style="width:300px">
+						<rich:dragSource type="book" dragValue="#{book}" />
+						<h:panelGrid>
+							<h:outputText value="#{book.alias} (#{book.author})" />
+							<h:commandLink action="#{bookBean.edit}" value="查看详情">
+								<f:param name="bookId" value="#{book.id}" />
+							</h:commandLink>
+						</h:panelGrid>
+					</rich:panel>
+				</a4j:repeat>
+
+
+				<rich:panel header="借阅" style="width:300px;margin-left:60px">
+					<rich:dropTarget acceptedTypes="book" render="bookGrid" dropListener="#{listBean.borrow}" />
+					<rich:dataGrid id="bookGrid" value="#{listBean.borrowbooks}" var="book" columns="1">
+						<rich:panel header="#{book.alias}">
+							<h:panelGrid>
+								<h:outputText value="#{book.desc}" />
+								<h:graphicImage url="/resources/img/#{book.image}" height="90" width="70" />
+							</h:panelGrid>
+						</rich:panel>
+					</rich:dataGrid>
 				</rich:panel>
-			</rich:datatable>
+			</h:panelGrid>
 		</h:form>
 	</ui:define>
 	<ui:define name="tinyFooter">
-		<ui:include src="tinyFoot.xhtml" />
+		<ui:include src="template/tinyFoot.xhtml" />
 	</ui:define>
 </ui:composition>

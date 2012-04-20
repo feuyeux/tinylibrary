@@ -4,7 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import creative.fire.jsfrf.tinylibrary.model.Book;
-
+/**
+ * @author feuyeux@gmail.com
+ * @version 1.0
+ */
 public class TinyBooks {
 	private static List<Book> bookList;
 
