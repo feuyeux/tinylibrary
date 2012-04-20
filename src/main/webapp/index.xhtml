@@ -1,32 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:rich="http://richfaces.org/rich" xmlns:a4j="http://richfaces.org/a4j">
-<h:head>
-	<h:outputStylesheet>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core" xmlns:rich="http://richfaces.org/rich" xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+	<ui:define name="tinyHeader">
+		<ui:include src="tinyHead.xhtml" />
+	</ui:define>
+
+	<ui:define name="tinyBody">
+		<h:outputStylesheet>
 	.vtop {
 	vertical-align: top;
 	width: 150px;
 	}
 	</h:outputStylesheet>
-	<title>tinylibrary1.0</title>
-</h:head>
-<h:body>
-	<h:form>
-		<h:outputText value="欢迎 #{reception.name}" />
-		<rich:dataGrid value="#{listBean.books}" var="book" columns="3" columnClasses="vtop vtop vtop">
-			<rich:panel header="#{book.alias}">
-				<h:panelGrid columns="2">
-					<h:commandLink action="#{bookBean.edit}" value="#{book.desc}">
+		<h:form>
+			<h:outputText value="欢迎 #{reception.name}" />
+			<rich:datatable value="#{listBean.books}" var="book">
+				<rich:column>
+					<h:commandLink action="#{bookBean.edit}" value="#{book.alias}">
 						<f:param name="bookId" value="#{book.id}" />
 					</h:commandLink>
+				</rich:column>
+				<rich:column>
+					<h:outputText value="#{book.desc}" />
+				</rich:column>
+				<rich:column>
 					<h:outputText value="#{book.author}" />
-				</h:panelGrid>
-				<h:outputLink value="#{book.url}">
-					<h:graphicImage url="/resources/img/#{book.image}" height="90" width="70" />
-				</h:outputLink>
-			</rich:panel>
-		</rich:dataGrid>
-	</h:form>
-</h:body>
-</html>
+				</rich:column>
+				<rich:column>
+					<h:outputLink value="#{book.url}">
+						<h:graphicImage url="/resources/img/#{book.image}" height="45" width="35" />
+					</h:outputLink>
+				</rich:column>
+				</rich:panel>
+			</rich:datatable>
+		</h:form>
+	</ui:define>
+	<ui:define name="tinyFooter">
+		<ui:include src="tinyFoot.xhtml" />
+	</ui:define>
+</ui:composition>
