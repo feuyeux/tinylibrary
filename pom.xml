@@ -10,7 +10,7 @@
 
 	<properties>
 		<jsf.version>2.1.7</jsf.version>
-		<rf.version>4.2.0.Final</rf.version>
+		<rf.version>4.2.1.Final</rf.version>
 	</properties>
 	<repositories>
 		<repository>
